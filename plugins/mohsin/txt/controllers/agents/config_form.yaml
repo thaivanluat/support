@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Agent
+
+# Model Form Field configuration
+form: $/mohsin/txt/models/agent/fields.yaml
+
+# Model Class name
+modelClass: Mohsin\Txt\Models\Agent
+
+# Default redirect location
+defaultRedirect: mohsin/txt/agents
+
+# Create page
+create:
+    title: Create Agent
+    redirect: mohsin/txt/agents/update/:id
+    redirectClose: mohsin/txt/agents
+
+# Update page
+update:
+    title: Edit Agent
+    redirect: mohsin/txt/agents
+    redirectClose: mohsin/txt/agents
+
+# Preview page
+preview:
+    title: Preview Agent

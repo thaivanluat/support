@@ -1,0 +1,24 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+projects:
+    label: Project
+    list: ~/plugins/responsiv/pyrolancer/models/project/columns.yaml
+    form: ~/plugins/responsiv/pyrolancer/models/project/fields.yaml
+    view:
+        toolbarButtons: false
+        recordUrl: responsiv/pyrolancer/projects/preview/:id
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+
+reviews:
+    label: Review
+    list: ~/plugins/responsiv/pyrolancer/models/workerreview/columns.yaml
+    form: ~/plugins/responsiv/pyrolancer/models/workerreview/fields.yaml
+    view:
+        toolbarButtons: delete
+    manage:
+        showSearch: true
+        recordsPerPage: 10

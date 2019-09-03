@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: mohsin.txt::lang.agent.name
+        searchable: true
+
+    comment:
+        label: mohsin.txt::lang.agent.comment
+        searchable: true

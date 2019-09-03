@@ -1,0 +1,29 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    business_name:
+        label: Business Name
+        searchable: true
+
+    user_name:
+        label: Name
+        relation: user
+        select: name
+        searchable: true
+
+    user_email:
+        label: Email
+        relation: user
+        select: email
+        searchable: true
+
+    created_at:
+        label: Joined
+        type: date
+
+    updated_at:
+        label: Last updated
+        invisible: true
+        type: date

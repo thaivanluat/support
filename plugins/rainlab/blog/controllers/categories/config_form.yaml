@@ -1,0 +1,11 @@
+name: 'rainlab.blog::lang.blog.create_category'
+modelClass: RainLab\Blog\Models\Category
+form: ~/plugins/rainlab/blog/models/category/fields.yaml
+defaultRedirect: rainlab/blog/categories
+create:
+    redirect: 'rainlab/blog/categories/update/:id'
+    redirectClose: rainlab/blog/categories
+update:
+    redirect: rainlab/blog/categories
+    redirectClose: rainlab/blog/categories
+preview: {  }

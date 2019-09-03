@@ -1,0 +1,182 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="content create-ticket">
+        <!-- CONTENT START -->
+            {% flash success %}
+                <p data-control="flash-message" data-interval="5" class="success">
+                    {{ message }}
+                </p>
+            {% endflash %}
+            {% flash error %}
+                <p data-control="flash-message" data-interval="5" class="error">
+                    {{ message }}
+                </p>
+            {% endflash %}
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-8">
+                <form enctype="multipart/form-data" id="ticketForm" method="post" novalidate="novalidate" data-request="onSend">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="box-group box-group-home">
+                                <div class="box-small1">
+                                    <h2 class="product-name product-name-home">{{ 'contactinformation'|_ }}</h2>
+                                    <div class="textbox-input-1 form-group">
+                                        <label>{{ 'name'|_ }}</label>
+                                        <input class="input-text" data-val="true" data-val-maxlength="{{ '64character'|_ }}" data-val-maxlength-max="64" data-val-required="{{ 'pleaseentername'|_ }}" id="name" name="Name" placeholder="{{ 'name'|_ }}" type="text" value="" required="" aria-required="true">                                            <div class="has-error">
+                                            <span class="help-block">
+                                                <span class="field-validation-valid help-block" data-valmsg-for="Name" data-valmsg-replace="true"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="textbox-input-1" id="oldCustomer">
+                                        <p style="display: inline-block;">&nbsp {{ 'oldcustomer'|_ }}: </p>
+                                        &nbsp&nbsp&nbsp
+                                        <label style="display: inline-block;"><input type="radio" name="OldCustomer" value="1" checked><span>{{ 'yes'|_ }}</span></label>
+                                        &nbsp&nbsp
+                                        <label style="display: inline-block;" id="HideError"><input type="radio" name="OldCustomer" value="0"><span>{{ 'no'|_ }}</span></label>
+                                    </div>
+
+                                    <div class="textbox-input-2 form-group">
+                                        <label>Email</label>
+                                        <input class="input-text" data-val="true" data-val-email="{{ 'validemailaddress'|_ }}" data-val-length="{{ '128character'|_ }}" data-val-length-max="128" data-val-regex="{{ 'notrightemailformat'|_ }}" data-val-regex-pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" data-val-required="{{ 'pleaseenteremail'|_ }}" id="email" name="Email" placeholder="{{ 'emailaddress'|_ }}" type="text" value="" required="" aria-required="true">                                            <div class="has-error">
+                                            <span class="help-block">
+                                                <span class="field-validation-valid help-block" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="textbox-input-3 form-group">
+                                        <label>{{ 'phonenumber'|_ }}</label>
+                                        <input class="input-text" data-val="true" data-val-maxlength="Không được vượt quá 20 ký tự" data-val-maxlength-max="{{ '20character'|_ }}" data-val-required="{{ 'pleaseenterphone'|_ }}" id="phone" name="Phone" placeholder="{{ 'phonenumber'|_ }}" type="text" value="" required="" aria-required="true">                                            <div class="has-error">
+                                            <span class="help-block">
+                                                <span class="field-validation-valid help-block" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+                                            </span>
+                                        </div>
+                                        <p id="CustomerError" class="text-danger">{{ 'customernotfound'|_ }}</p>
+                                    </div>
+                                    <div class="textbox-input-4 input-select form-group">
+                                        <label>Domain </label>
+                                        <input class="input-text" data-val="true" data-val-maxlength="{{ '150character'|_ }}" data-val-maxlength-max="150" data-val-required="{{ 'pleaseenterdomain'|_ }}" id="website" name="Website" placeholder="{{ 'yourdomain'|_ }}" type="text" value="">                                            <select class="service-type" name="ServiceType" >
+                                            <option value=".cloudpro.vn">.cloudpro.vn</option>
+                                            <option value=".cloudpro.vn">.cloudpro.vn</option>
+                                        </select>
+                                        <div class="has-error">
+                                            <span class="help-block">
+                                                <span class="field-validation-valid help-block" data-valmsg-for="Website" data-valmsg-replace="true"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="dynamic-form">
+                                </div>
+                                <div class="box-help form-group">
+                                    <h2 class="product-name product-name-home" style="">{{ 'helpcontent'|_ }}</h2>
+                                    <select data-val="true" data-val-required="Lựa chọn mục hỗ trợ" id="topicId" name="Type"><option value="">{{ 'choosesupporttype'|_ }}...</option>
+                                        <option value="Kỹ thuật">{{ 'technology_ticket'|_ }}</option>
+                                        <option value="Bán hàng">{{ 'sales_ticket'|_ }}</option>
+                                        <option value="Chăm sóc khách hàng">{{ 'customerservices_ticket'|_ }}</option>
+                                        <option value="Kế toán">{{ 'accounting_ticket'|_ }}</option>
+                                        <option value="Khác">{{ 'other_ticket'|_ }}</option>
+                                    </select>
+                                    <div class="has-error">
+                                        <span class="help-block">
+                                            <span class="field-validation-valid help-block" data-valmsg-for="Type" data-valmsg-replace="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-small-ht">
+                        <div class="textbox-input-1 form-group">
+                            <div class="input-text-title">{{ 'title'|_ }}</div>
+                            <input class="input-text-require-title" data-val="true" data-val-required="{{ 'pleaseentertitle'|_ }}" id="title_required" name="Title" type="text" value="">
+                            <font class="error">*</font>
+                        </div>
+                        <div class="form-group">
+                            <textarea data-val="true" data-val-required="{{ 'pleaseenterhelpcontent'|_ }}" id="" name="ContentRequired" type="text" value="" placeholder="{{ 'content'|_ }}"></textarea>
+                            <div id="411f76914eb51bd9c651aa" class="filedrop">
+                                <div class="files"></div>
+
+                                <div class="dropzone">
+                                    <i class="icon-upload"></i>
+                                    <label class="manual"> {{ 'attachfile'|_ }}
+                                    <input type="file" multiple="multiple" id="file-411f76914eb51bd9c651aa" style="display: none; width: 0px; height: 0px;" accept="image/bmp,image/gif,image/jpeg,image/png,image/svg+xml,image/tiff,image/vnd.adobe.photoshop,image/vnd.microsoft.icon,image/x-ico,application/postscript,audio/aiff,audio/mpeg,audio/mp4,audio/ogg,0,audio/vnd.wav,audio/wav,audio/x-midi,text/css,text/html,text/javascript,text/plain,text/xml,application/json,application/javascript,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.ms-word.document.macroEnabled.12,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12,application/vnd.ms-excel.sheet.binary.macroEnabled.12,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.presentationml.slideshow,application/vnd.ms-powerpoint.presentation.macroEnabled.12,application/vnd.ms-powerpoint.slideshow.macroEnabled.12,application/vnd.ms-access,application/vnd.ms-project,application/msonenote,application/vnd.ms-publisher,application/rtf,application/vnd.ms-works,application/vnd.apple.keynote,application/vnd.apple.pages,application/vnd.apple.numbers,application/vnd.oasis.opendocument.text,application/vnd.oasis.opendocument.text-web,application/vnd.oasis.opendocument.text-master,application/vnd.oasis.opendocument.graphics,application/vnd.oasis.opendocument.presentation,application/vnd.oasis.opendocument.spreadsheet,application/vnd.oasis.opendocument.chart,application/vnd.oasis.opendocument.formula,application/vnd.oasis.opendocument.database,application/vnd.oasis.opendocument.image,application/vnd.openofficeorg.extension,application/wordperfect,application/vnd.kde.karbon,application/vnd.kde.kchart,application/vnd.kde.kformula,application/vnd.kde.kivio,application/vnd.kde.kontour,application/vnd.kde.kpresenter,application/vnd.kde.kspread,application/vnd.kde.kword,application/pdf,.csv,application/illustrator,application/x-director,application/x-indesign,text/vcard,image/x-dwg,image/vnd.dwg,image/vnd.dxf,application/x-autocad,application/x-mathcad,application/x-msmoney,application/x-latex,video/avi,video/mpeg,video/mp4,video/ogg,video/quicktime,video/webm,video/x-ms-asf,video/x-ms-wmv,application/x-dvi,application/x-shockwave-flash,application/tar,application/gzip,application/x-lha,application/rar,application/x-compress,application/zip,application/x-7z-compressed">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="has-error padding-md-left">
+                                <span class="help-block">
+                                    <span class="field-validation-valid help-block" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                                </span>
+                            </div>
+                            <div class="has-error padding-md-left">
+                                <span class="help-block">
+                                    <span class="field-validation-valid help-block" data-valmsg-for="ContentRequired" data-valmsg-replace="true"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <div class="g-recaptcha" data-sitekey="6Lca07MUAAAAAIRobLqozk5VJ9Mhld5FQvkh8Hk7" data-callback="enableRegisterButton">
+                            </div>
+                            <button type="submit" class="button btn-registration mt-3" id="btn_send" disabled>
+                                <span class="event-Support-tickey-submit">{{ 'sendrequest'|_ }} </span>
+                            </button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-8">
+                <div class="contact">
+                    <fieldset>
+                        <legend>&nbsp<i class="fa fa-phone"></i>{{ 'supportphone'|_ }}</legend>
+                        <strong>{{ 'techincalsupport'|_ }}: </strong><p><span>19009477</span><i>&nbsp(ext 2)-[24/7/365]</i></p><br>
+                        <strong>{{ 'customerservice'|_ }}: </strong><p><span>19009477</span><i>&nbsp(ext 2)-[24/7/365]</i></p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                    </fieldset>
+                </div>
+                <div class="sendRequest-item">
+                    <a href="">
+                        <div class="icon">
+                           <img src="themes/zanor-zanor-mdb-loaded/assets/images/sendticket.png" />
+                        </div>
+                        <h3>{{ 'guidetosendrequest'|_ }}</h3>
+                    </a>
+                </div>
+                <div class="sendRequest-item">
+                    <a href="http://portal-dev.cloudpro.vn" target="_blank">
+                        <div class="icon">
+                           <img src="themes/zanor-zanor-mdb-loaded/assets/images/checkticket.png" />
+                        </div>
+                        <h3>{{ 'checkticket'|_ }}</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- END CONTENT -->
+</div>
+<script type="text/javascript" src="themes/zanor-zanor-mdb-loaded/assets/js/script.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="themes/zanor-zanor-mdb-loaded/assets/js/SendTicket.js"></script>
+<script>
+    $(".textbox-input-5 > .input-text").prop('required', true);
+    $(".textbox-input-1 > .input-text").prop('required', true);
+    $(".textbox-input-2 > .input-text").prop('required', true);
+    $(".textbox-input-5").append('<font class=\"error\">*</font>');
+
+    // $("#btn_send").click(function(event) {
+    //     $("#ticketForm").trigger("reset");
+    // });
+    function enableRegisterButton() {
+        $("#btn_send").attr("disabled", false);
+    }
+
+
+</script>

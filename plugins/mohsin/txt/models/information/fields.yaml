@@ -1,0 +1,10 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    field:
+        label: Field
+
+    value:
+        label: Value

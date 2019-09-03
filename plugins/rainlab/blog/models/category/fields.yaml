@@ -1,0 +1,22 @@
+fields:
+    name:
+        label: 'rainlab.blog::lang.category.name'
+        span: left
+        placeholder: 'rainlab.blog::lang.category.name_placeholder'
+        type: text
+    slug:
+        label: 'rainlab.blog::lang.category.slug'
+        span: right
+        placeholder: 'rainlab.blog::lang.category.slug_placeholder'
+        preset: name
+        type: text
+    description:
+        label: 'rainlab.blog::lang.category.description'
+        size: large
+        span: full
+        type: textarea
+    ordinal:
+        label: STT
+        span: auto
+        default: '10'
+        type: number

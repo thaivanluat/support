@@ -1,0 +1,15 @@
+subject = "Contact form submitted by: {{ name }}"
+==
+<p>
+    From: {{ name }} &lt;{{ email }}&gt;
+</p>
+<p>
+    Message Body:
+</p>
+<blockquote>
+    {{ comments }}
+</blockquote>
+<hr />
+<p>
+    This mail is sent via your profile found on {{ site_name }}
+</p>

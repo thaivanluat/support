@@ -1,0 +1,35 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: ~/plugins/benfreke/menumanager/models/menu/columns.yaml
+
+# Model Class name
+modelClass: BenFreke\MenuManager\Models\Menu
+
+# List Title
+title: benfreke.menumanager::lang.form.manage
+
+# Link URL for each record
+recordUrl: benfreke/menumanager/menus/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: backend::lang.list.no_records
+
+# Records to display per page
+recordsPerPage: 50
+
+showTree: true
+
+# Show selectable checkboxes next to each menu item in the main list
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: backend::lang.list.search_prompt

@@ -1,0 +1,36 @@
+description = "Nav with Dropdown"
+
+[viewBag]
+
+[menu]
+start = "id-1"
+activeNode = "id-1"
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 2
+
+[searchForm]
+resultPage = "searchResult"
+categoryFilter = 0
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/dropdownMenu.css');
+}
+?>
+==
+{% component 'menu' %}
+
+{% set resultPage = searchForm.resultPage %}
+<div class="search-banner">
+    <div class="container">
+		<h2>{{ 'customersupportcenter'|_ }}<span class="d-none d-lg-inline-block">&nbsp;-&nbsp;</span><br class="d-block d-lg-none">Hotline: <a href=""><strong>1900 29 29 90</strong></a><small><i>&nbsp(ext 2)</i></small></h2>
+        <form  action="{{ resultPage|page }}" method="Get" class="search-form">
+            <input type="text" name="search" placeholder="{{ 'typetosearch'|_ }}" value="" required="" pattern=".{3,}" title="{{ 'pleasetypeatleast'|_ }}">
+            <button type="submit" class="btn-search">{{ 'search'|_ }}</button>
+        </form>
+    </div>
+</div>
+<!--/.Navbar-->

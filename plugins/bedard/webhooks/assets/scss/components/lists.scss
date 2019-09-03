@@ -1,0 +1,51 @@
+.bedard-webhooks.list {
+
+    //
+    // Url column
+    //
+    td.url-column:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    //
+    // Execute button
+    //
+    td.execute-btn a {
+        text-align: center;
+        transition: background-color 0.2s;
+        width: 100%;
+    }
+
+    //
+    // Execute button
+    //
+    td.execute-btn {
+        position: relative;
+
+        a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    //
+    // Icons
+    //
+    i.icon {
+        font-size: 14px;
+        padding-right: 4px;
+
+        &.icon-check { color: #95B753 }
+        &.icon-times { color: #CC3300 }
+    }
+
+    //
+    // Safe mode callout
+    //
+    .callout {
+        padding: 0 20px;
+        i.icon-times { padding-right: 10px }
+    }
+}

@@ -1,0 +1,14 @@
+description = "No Sidebar"
+
+[localePicker]
+forceUrl = 0
+==
+{% spaceless %}
+{% partial 'site/head' %}
+{% partial 'site/nav' %}
+
+{% page %}
+
+{% partial 'site/scrollTop' %}
+{% partial 'site/footer' %}
+{% endspaceless %}

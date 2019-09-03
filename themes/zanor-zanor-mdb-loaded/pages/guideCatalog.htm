@@ -1,0 +1,38 @@
+title = "Danh mục tài liệu"
+url = "/guide-catalog/:category/:page?"
+layout = "withSidebarCategory"
+is_hidden = 0
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogCategories]
+slug = "{{ :category }}"
+displayEmpty = 0
+categoryPage = "guideCatalog"
+menu_id = 1
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :category }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guideCatalog"
+postPage = "post"
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/guideCatalog.css');
+}
+?>
+==
+{% set categories = blogCategories.categories %}
+{% set posts = blogPosts.posts %}
+
+{% partial 'blog/guideCatalog' %}
+{% partial 'blog/pagination' %}

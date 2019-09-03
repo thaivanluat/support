@@ -1,0 +1,36 @@
+description = "Blog Post"
+
+[viewBag]
+
+[SeoBlogPost]
+post = "post"
+==
+{% set currentPostSlug = CategoryTwoLevel.currentPostSlug %}
+{% if(currentPostSlug == '')%}
+{% set post = CategoryTwoLevel.postDefault %}
+{% endif %}
+<!--post-->
+<div class="post">
+    <div class="col-md-12">
+        <!--Content-->
+        <div class="mb-3 col-md-12 mt-2">
+            <!--Title-->
+            <div class="card-title mt-2">
+               <h1>{{ post.title|raw}}</h1>
+            </div>
+            <!--Text-->
+            <div class="card-text">
+                {{ post.content|md|raw }}
+            </div>
+        </div>
+
+        <div class="text-muted">
+            {% if(currentPostSlug != '')%}
+            <small class="float-right ml-5 mt-1">{{ post.published_at|date('d M Y') }}</small><br>
+            <small class="float-right ml-5 mt-1">{{ 'views'|_ }}:&nbsp</small>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!--/.post-->
+{% component 'SeoBlogPost' data=post %}

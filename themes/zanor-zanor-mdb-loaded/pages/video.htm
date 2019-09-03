@@ -1,0 +1,32 @@
+title = "Video"
+url = "/video/:category1/:category2?/:page?"
+layout = "withSidebarCategory"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[viewBag]
+localeTitle[en] = "Video Clips"
+
+[CategoryThreeLevel]
+pageNumber = "{{ :page }}"
+postSlug = "default"
+categoryMaster = "guide"
+categoryParentFilter = "{{ :category1 }}"
+categoryFilter = "{{ :category2 }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "ordinal asc"
+categoryPage = "video"
+postPage = "post"
+==
+<?php
+function onStart()
+{
+$this->addJs('assets/js/videoModalHome.js');
+$this->addCss('assets/css/video.css');
+}
+?>
+==
+{% partial 'blog/video' %}
+{% partial 'blog/pagination' %}

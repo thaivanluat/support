@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Client
+
+# Model Form Field configuration
+form: $/responsiv/pyrolancer/models/client/fields.yaml
+
+# Model Class name
+modelClass: Responsiv\Pyrolancer\Models\Client
+
+# Default redirect location
+defaultRedirect: responsiv/pyrolancer/clients
+
+# Create page
+create:
+    title: Create Client
+    redirect: responsiv/pyrolancer/clients/update/:id
+    redirectClose: responsiv/pyrolancer/clients
+
+# Update page
+update:
+    title: Edit Client
+    redirect: responsiv/pyrolancer/clients
+    redirectClose: responsiv/pyrolancer/clients
+
+# Preview page
+preview:
+    title: Preview Client

@@ -1,0 +1,68 @@
+.faqs ul{
+padding: 0;
+margin: 0;
+list-style: none;
+}
+.faqs ul li {
+    position: relative;
+    padding: 10px 0;
+}
+
+.faqs ul li>a {
+    line-height: 26px;
+    padding-left: 32px;
+    font-size: 16px;
+    color: #42464e;
+    display: block;
+    font-weight: 500;
+    padding-right: 15px;
+}
+
+.faqs ul li>a.active {
+    color: rgb(66, 70, 78);
+}
+
+.faqs ul li a:not([href]):not([tabindex]):hover {
+    color: #1792fc
+}
+
+.faqs ul li a:not([href]):not([tabindex]):focus {
+    color: #1792fc
+}
+
+.faqs .index-home .question .block-content ul li>a {
+    line-height: 26px;
+    padding-left: 32px;
+    font-size: 16px;
+    color: #42464e;
+    display: block;
+    font-weight: 500;
+    padding-right: 15px;
+}
+
+.faqs ul li .question-content {
+    font-size: 16px;
+    padding-top: 10px;
+    display: none;
+}
+
+.faqs .index-home .question .block-content ul li .number-circle {
+    background: #0088ff;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.faqs ul li .fa {
+    position: absolute;
+    right: 0;
+    top: 13px;
+    font-size: 20px;
+}

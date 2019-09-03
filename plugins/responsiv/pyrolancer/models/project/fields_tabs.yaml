@@ -1,0 +1,234 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        span: auto
+
+    slug:
+        label: Slug
+        span: auto
+
+tabs:
+
+    fields:
+
+        #
+        # Description
+        #
+
+        description:
+            label: Description
+            type: textarea
+            tab: Details
+
+        instructions:
+            label: Instructions
+            type: textarea
+            tab: Details
+
+        files:
+            label: Uploaded files
+            type: fileupload
+            mode: file
+            tab: Details
+
+        #
+        # Location
+        #
+
+        is_remote:
+            label: Job can be performed remotely
+            type: checkbox
+            tab: Location
+
+        address:
+            label: Address
+            type: addressfinder
+            tab: Location
+            fieldMap:
+                latitude: latitude
+                longitude: longitude
+                vicinity: vicinity
+                country: country_code
+                state: state_code
+            attributes:
+                data-trigger-action: disable
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+
+        vicinity:
+            label: Vicinity
+            tab: Location
+            span: auto
+            attributes:
+                readonly: 1
+                data-trigger-action: disable
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+            containerAttributes:
+                data-trigger-action: hide
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+
+        zip:
+            label: Zip
+            tab: Location
+            span: auto
+            attributes:
+                readonly: 1
+                data-trigger-action: disable
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+            containerAttributes:
+                data-trigger-action: hide
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+
+        country_code:
+            label: Country
+            tab: Location
+            span: auto
+            attributes:
+                readonly: 1
+                data-trigger-action: disable
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+            containerAttributes:
+                data-trigger-action: hide
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+
+        state_code:
+            label: State
+            tab: Location
+            span: auto
+            attributes:
+                readonly: 1
+                data-trigger-action: disable
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+            containerAttributes:
+                data-trigger-action: hide
+                data-trigger: 'input[name="Project[is_remote]"]'
+                data-trigger-condition: checked
+
+        latitude:
+            label: Latitude
+            tab: Location
+            span: auto
+            cssClass: hide
+
+        longitude:
+            label: Longitude
+            tab: Location
+            span: auto
+            cssClass: hide
+
+        #
+        # Position
+        #
+        project_type:
+            label: Project Type
+            type: relation
+            emptyOption: -- select --
+            span: auto
+            tab: Position
+
+        position_type:
+            label: Position Type
+            type: relation
+            emptyOption: -- select --
+            span: auto
+            tab: Position
+
+        budget_type:
+            label: Budget
+            type: relation
+            emptyOption: -- select --
+            tab: Position
+
+        budget_fixed:
+            type: relation
+            tab: Position
+            emptyOption: -- select --
+            containerAttributes:
+                data-trigger-action: display
+                data-trigger: 'select[name="Project[budget_type]"]'
+                data-trigger-condition: value[6]
+
+        budget_hourly:
+            type: relation
+            tab: Position
+            span: left
+            emptyOption: -- select --
+            containerAttributes:
+                data-trigger-action: display
+                data-trigger: 'select[name="Project[budget_type]"]'
+                data-trigger-condition: value[7]
+
+        budget_timeframe:
+            type: relation
+            tab: Position
+            span: right
+            emptyOption: -- select --
+            containerAttributes:
+                data-trigger-action: display
+                data-trigger: 'select[name="Project[budget_type]"]'
+                data-trigger-condition: value[7]
+
+        #
+        # Skills
+        #
+        category:
+            label: Category
+            type: relation
+            tab: Skills
+
+        skills:
+            label: Skills
+            type: taglist
+            mode: relation
+            tab: Skills
+
+        #
+        # Options
+        #
+
+        is_featured:
+            label: Featured
+            comment: Project appears as featured.
+            span: auto
+            type: checkbox
+            tab: Options
+
+        is_urgent:
+            label: Urgent
+            comment: Project appears as urgent, email notitications sent immediately.
+            span: auto
+            type: checkbox
+            tab: Options
+
+        is_sealed:
+            label: Sealed
+            comment: Bids and contacts are hidden from other users.
+            span: auto
+            type: checkbox
+            tab: Options
+
+        is_private:
+            label: Private
+            comment: Project can only be viewed by registered users.
+            span: auto
+            type: checkbox
+            tab: Options
+
+        is_hidden:
+            label: Hidden
+            comment: Project does not appear in the main list of projects.
+            span: auto
+            type: checkbox
+            tab: Options
+

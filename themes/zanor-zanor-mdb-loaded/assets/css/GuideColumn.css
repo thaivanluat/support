@@ -1,0 +1,24 @@
+div.MoreColumn {
+	display: none;
+}
+
+div.MoreColumn1 {
+	display: none;
+}
+
+#HideLess {
+	display: none;
+}
+
+#HideLess1 {
+	display: none;
+}
+
+li.sub_accordian a.show_less {
+	color: #1db8f5 !important;
+	display: none;
+}
+
+li.sub_accordian a.show_more {
+	color: #1db8f5 !important;
+}

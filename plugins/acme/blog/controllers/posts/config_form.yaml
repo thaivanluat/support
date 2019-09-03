@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Post
+
+# Model Form Field configuration
+form: $/acme/blog/models/post/fields.yaml
+
+# Model Class name
+modelClass: Acme\Blog\Models\Post
+
+# Default redirect location
+defaultRedirect: acme/blog/posts
+
+# Create page
+create:
+    title: Create Post
+    redirect: acme/blog/posts/update/:id
+    redirectClose: acme/blog/posts
+
+# Update page
+update:
+    title: Edit Post
+    redirect: acme/blog/posts
+    redirectClose: acme/blog/posts
+
+# Preview page
+preview:
+    title: Preview Post

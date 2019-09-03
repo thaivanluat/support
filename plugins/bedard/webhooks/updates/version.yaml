@@ -1,0 +1,6 @@
+1.0.1:
+    - First version of Webhook
+    - create_hooks_table.php
+    - create_logs_table.php
+
+1.0.2: Fix MySQL strict-mode error

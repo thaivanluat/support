@@ -1,0 +1,5 @@
+title: 'rainlab.blog::lang.category.reorder'
+modelClass: RainLab\Blog\Models\Category
+nameFrom: name
+toolbar:
+    buttons: reorder_toolbar

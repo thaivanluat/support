@@ -1,0 +1,36 @@
+==
+<!-- The modal to display video -->
+<div id="myModal" class="modal">
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+
+    <!-- Modal Content (The iframe video) -->
+    <div class="modal-contain" id="modalContain">
+
+    </div>
+    <!-- Modal Caption (The video title) -->
+    <a id="caption"></a>
+</div>
+
+<div class="container">
+    <div class="pd-50">
+        <h1 class="text-center"> Hội thảo </h1>
+    </div>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 mb-30 ">
+            <div class="webinar-content">
+                <div class="webinar-image">
+                    <img src="storage/app/media{{ post.image }}" alt=""
+                        width="225px" height="150px">
+                    <span class="video-play"><i class="fa fa-play"></i></span>
+                </div>
+                <div class="webinar-title">
+                    <p>{{ post.title }}</p>
+                </div>
+                <div class="video-iframe" style="display: none">{{ post.iframe|raw }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

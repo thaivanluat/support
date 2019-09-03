@@ -1,0 +1,27 @@
+description = "Câu hỏi thường gặp"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/faqsPage.css');
+}
+?>
+==
+{% set currentCategorySlug1 = CategoryThreeLevel.currentCategorySlug1 %}
+{% set currentCategorySlug2 = CategoryThreeLevel.currentCategorySlug2 %}
+<div class="row">
+    <div class="list-item">
+        {% for post in posts %}
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> 
+            <div class="question-item">
+                <h3 class=" question-title ">{{ post.title }}<span class="circle"></span></h3>
+                <div class="question-content">
+                    {{ post.content_html|raw }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

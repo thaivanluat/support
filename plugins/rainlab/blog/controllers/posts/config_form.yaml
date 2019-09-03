@@ -1,0 +1,10 @@
+name: 'rainlab.blog::lang.blog.create_post'
+modelClass: RainLab\Blog\Models\Post
+form: ~/plugins/rainlab/blog/models/post/fields.yaml
+defaultRedirect: rainlab/blog/posts
+create:
+    redirect: 'rainlab/blog/posts/update/:id'
+    redirectClose: rainlab/blog/posts
+update:
+    redirect: rainlab/blog/posts
+    redirectClose: rainlab/blog/posts

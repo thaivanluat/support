@@ -1,0 +1,33 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    status_name:
+        label: Status
+        relation: status
+        select: name
+        type: partial
+        path: $/responsiv/pyrolancer/controllers/projects/_status_column.htm
+
+    name:
+        label: Name
+        searchable: true
+
+    slug:
+        label: Slug
+        searchable: true
+
+    user_name:
+        label: Owner
+        relation: user
+        select: name
+
+    created_at:
+        label: Submitted
+        type: timetense
+
+    updated_at:
+        label: Last updated
+        invisible: true
+        type: timetense

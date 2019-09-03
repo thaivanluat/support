@@ -1,0 +1,14 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: mohsin.txt::lang.agent.name
+        commentAbove: mohsin.txt::lang.agent.name_comment
+        placeholder: mohsin.txt::lang.agent.name_placeholder
+
+    comment:
+        label: mohsin.txt::lang.agent.comment
+        commentAbove: mohsin.txt::lang.agent.comment_comment
+        placeholder: mohsin.txt::lang.agent.comment_placeholder

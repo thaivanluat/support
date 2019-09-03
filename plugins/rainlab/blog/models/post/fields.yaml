@@ -1,0 +1,83 @@
+fields:
+    title:
+        label: 'rainlab.blog::lang.post.title'
+        span: left
+        placeholder: 'rainlab.blog::lang.post.title_placeholder'
+        type: text
+    slug:
+        label: 'rainlab.blog::lang.post.slug'
+        span: right
+        placeholder: 'rainlab.blog::lang.post.slug_placeholder'
+        preset:
+            field: title
+            type: slug
+        type: text
+    toolbar:
+        span: full
+        cssClass: collapse-visible
+        path: post_toolbar
+        type: partial
+secondaryTabs:
+    fields:
+        content:
+            tab: 'rainlab.blog::lang.post.tab_edit'
+            type: RainLab\Blog\FormWidgets\BlogMarkdown
+            cssClass: 'field-slim blog-post-preview'
+            stretch: true
+            mode: split
+        categories:
+            tab: 'rainlab.blog::lang.post.tab_categories'
+            type: relation
+            commentAbove: 'rainlab.blog::lang.post.categories_comment'
+            placeholder: 'rainlab.blog::lang.post.categories_placeholder'
+        ordinal:
+            label: STT
+            span: auto
+            default: '11'
+            type: number
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        location:
+            label: 'Vị trí hiển thị'
+            options:
+                default: Default
+                hien-thi-o-cau-hoi-thuong-gap: 'Hiển thị ở câu hỏi thường gặp'
+                hien-thi-o-video-huong-dan-trang-chu: 'Hiển thị ở video hướng dẫn trang chủ'
+                hien-thi-o-trang-ebooks: 'Hiển thị ở trang ebooks'
+            showSearch: true
+            span: auto
+            default: NONE
+            type: dropdown
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        published:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published'
+            span: left
+            type: checkbox
+        published_at:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published_on'
+            span: left
+            cssClass: checkbox-align
+            type: datepicker
+            mode: datetime
+            trigger:
+                action: enable
+                field: published
+                condition: checked
+        excerpt:
+            label: Excerpt
+            size: small
+            span: full
+            type: textarea
+            tab: 'rainlab.blog::lang.post.tab_manage'
+        image:
+            label: 'Hình đại diện cho video'
+            mode: file
+            span: auto
+            type: mediafinder
+            tab: video
+        iframe:
+            label: 'Mã nhúng video'
+            span: auto
+            type: text
+            tab: video

@@ -1,0 +1,47 @@
+description = "sidebar cho trang huong dan chung"
+
+[viewBag]
+==
+{% set currentCategorySlug1 = CategoryTwoLevel.currentCategorySlug1 %}
+{% set currentCategorySlug2 = CategoryTwoLevel.currentCategorySlug2 %}
+{% set categoryParent = CategoryTwoLevel.categoryParent %}
+{% set categories = CategoryTwoLevel.categoriesChild %}
+{% set posts = CategoryTwoLevel.posts %}
+{% set currentPostSlug = CategoryTwoLevel.currentPostSlug %}
+{% set categoryChildSlugDefault = CategoryTwoLevel.categoryChildSlugDefault %}
+
+{% if(currentPostSlug == '')%}
+{% set postDefault = CategoryTwoLevel.postDefault %}
+{% endif %}
+
+<div class="detail-category">
+    <h2>
+        <span class="fa fa-bars btn-category-mobile d-inline-block d-md-none"></span>
+            {{ categoryParent.name }}
+    </h2>
+    <ul class="lv1">
+        {% for category in categories %}
+            {% if( currentCategorySlug2 == '') %}
+                {% set currentCategorySlug2 = categoryChildSlugDefault %}
+            {% endif %}
+
+            <li class=" {% if(category.slug == currentCategorySlug2) %} active-text {%endif%}">
+
+                <a href="{{ 'post'|page({category1: categoryParent.slug, category2: category.slug, slug: category.slugPostDefault }) }}"
+                    title="{{ category.name }}">{{ category.name }}</a>
+
+                {% if( category.slug == currentCategorySlug2 ) %}
+                    <ul class="lv2">
+                        {% for post in posts %}
+                        <li class="{% if post.slug == currentPostSlug %} active
+                                {% elseif post.slug == postDefault.slug %} active {% endif %}">
+                            <a href="{{ 'post'|page({category1: categoryParent.slug, category2: category.slug, slug: post.slug}) }}"  title="{{ post.title }}">
+                                {{ post.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>

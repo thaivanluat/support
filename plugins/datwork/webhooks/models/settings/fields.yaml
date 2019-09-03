@@ -1,0 +1,31 @@
+fields:
+  user_details_section:
+    label: 'datwork.webhooks::lang.setting.title'
+    type: section
+    comment: 'datwork.webhooks::lang.setting.desc'
+  enabled:
+    label: 'datwork.webhooks::lang.setting.enabled'
+    commentAbove: 'datwork.webhooks::lang.setting.enabled_comment'
+    comment: 'datwork.webhooks::lang.setting.enabled_comment'
+    span: full
+    type: switch
+    default: true
+  link:
+    label: 'datwork.webhooks::lang.setting.link'
+    span: full
+    readOnly: true
+    type: text
+  content_type:
+    label: 'datwork.webhooks::lang.setting.content_type'
+    type: dropdown
+    options:
+      draft: application/json
+      published: application/x-www-form-urlencoded
+  key:
+    label: 'datwork.webhooks::lang.setting.key'
+    commentAbove: 'datwork.webhooks::lang.setting.key_comment'
+    span: full
+    type: text
+
+
+

@@ -1,0 +1,31 @@
+
+
+<h2>{{ 'Kết quả tìm kiếm cho: '|_ }} {{ __SELF__.searchTerm  }}</h2>
+
+<ul class= "search-result">
+    {% for post in posts %}
+    <li>
+        <div class="block-title">
+            <img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-search-result.png">
+            <h3><a href="{{ post.url }}">{{ post.title|raw }}</a></h3>
+        </div>
+
+        <p class="info">
+            {{ 'Posted'|_ }}
+            {% if post.categories.count %} {{ 'in'|_ }} {% endif %}
+            {% for category in post.categories %}
+            {{ category.name }}{% if not loop.last %}, {% endif %}
+            {% endfor %}
+            {{ 'on'|_ }} {{ post.published_at|date('M d, Y') }}
+        </p>
+
+        {% if post.excerpt %}
+        <p class="excerpt">{{ post.excerpt|raw }}</p>
+        {% else %}
+        <div class="content">{{ post.summary|raw }}</div>
+        {% endif %}
+    </li>
+    {% else %}
+    <li class="no-data">{{ noPostsMessage }}</li>
+    {% endfor %}
+</ul>

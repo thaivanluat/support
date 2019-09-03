@@ -1,0 +1,11 @@
+
+        <li>
+            <span class="status-icon <?= $class?>"><i class="icon-<?= $class=='success'?'check':'times'?>" ></i></span>
+            <span class="status-text success">
+                           <?php
+                            echo ''.date('H:i:s : ').' ';
+                            foreach($messages as $v){
+    echo $v.' ';
+            } ?>             </span>
+        </li>
+

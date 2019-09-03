@@ -1,0 +1,20 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    is_visible:
+        type: checkbox
+        label: Visible
+        comment: Uncheck this box to hide the skill from users.
+        default: true
+
+    name:
+        label: Skill Name
+        comment: This is the name to display on the front-end.
+
+    category:
+        label: Category
+        type: relation
+        comment: Choose the best category that suits this skill.
+        emptyOption: -- select --

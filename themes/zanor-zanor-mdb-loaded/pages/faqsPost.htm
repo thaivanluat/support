@@ -1,0 +1,27 @@
+title = "Bài viết cho câu hỏi"
+url = "/faqs-post/:category1/:category2/:slug"
+layout = "withSidebarFaqs"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[viewBag]
+localeTitle[en] = "Post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "createticket"
+
+[CategoryThreeLevel]
+pageNumber = "{{ :page }}"
+postSlug = "{{ :slug }}"
+categoryMaster = "Q&A"
+categoryParentFilter = "{{ :category1 }}"
+categoryFilter = "{{ :category2 }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "ordinal asc"
+categoryPage = "createticket"
+postPage = "createticket"
+==
+{% partial 'blog/post' %}

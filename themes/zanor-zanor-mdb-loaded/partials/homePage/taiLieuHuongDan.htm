@@ -1,0 +1,134 @@
+==
+{% set categoriesByCrmTieuChuan = postsCategoryCrmTieuChuan.categories %}
+{% set categoriesByCrmTheoNganh = postsCategoryCrmTheoNganh.categories %}
+    <!-- Hướng dẫn sử dụng -->
+
+    <div class="guide" id="guide1">
+        <div class="container">
+            <div class="block-title">
+                <img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-guide.png">
+                {% set postDefault = postsCategoryCrmTieuChuan.postsCategory[0][0] %}
+                <h2>&nbsp<a href="{{ 'post'| page({ category1:'guide-crm-tieu-chuan'|_}) }}">{{ 'userguide'|_ }}</a></h2>
+            </div>
+            <div class="row">
+                {% if(categoriesByCrmTieuChuan ) %}
+                    {% set i = 0 %} 
+                        {% set j = 0 %}
+                            {% set k = 0 %}  
+                            {% for category in categoriesByCrmTieuChuan  %}
+                                {% if(j>3) %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 MoreColumn" >
+                                    <div class="guide-item">
+                                        <div class="guide-item-title">
+                                            {% set postDefaultForeachCategory = postsCategoryCrmTieuChuan.postsCategory[i][0] %}
+                                            <a class="{% if category.slug == currentCategorySlug %}active{% endif %}"
+                                            href="{{ 'post'| page({ category1:'guide-crm-tieu-chuan'|_,category2: category.slug, slug: postDefaultForeachCategory.slug }) }}"><h3 class="fz-24" >{{ category.name }}</h3> 
+                                            </a>
+                                        </div>
+                                    <ul class="PostList"> 
+                                        {% set postsCategory = postsCategoryCrmTieuChuan.postsCategory[i] %}
+                                        {% for post in postsCategory %}
+                                        <li>
+                                            <a title = "{{ post.title }}" href="{{ 'post'| page({ category1:'guide-crm-tieu-chuan'|_,category2: category.slug, slug: post.slug}) }}">{{ post.title }}</a>
+                                        </li>
+                                        {% endfor %}
+                                        <li class='sub_accordian'><a class='show_more'>{{ 'seemore'|_ }}</a><a class='show_less'>{{ 'hideless'|_ }}</a></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 ">
+                                    <div class="guide-item">
+                                        <div class="guide-item-title">
+                                            {% set postDefaultForeachCategory = postsCategoryCrmTieuChuan.postsCategory[i][0] %}
+                                            <a class="{% if category.slug == currentCategorySlug %}active{% endif %}"
+                                            href="{{ 'post'| page({ category1:'guide-crm-tieu-chuan'|_,category2: category.slug, slug: postDefaultForeachCategory.slug }) }}"><h3 class="fz-24">{{ category.name }}</h3>
+                                            </a>
+                                        </div>
+                                    <ul class="PostList">
+                                        {% set postsCategory = postsCategoryCrmTieuChuan.postsCategory[i] %}
+                                        {% for post in postsCategory %}
+                                        <li>
+                                            <a title="{{ post.title }}" href="{{ 'post'| page({ category1:'guide-crm-tieu-chuan'|_,category2: category.slug, slug: post.slug}) }}">{{ post.title }}</a>
+                                        </li>
+                                        {% endfor %}
+                                        <li class='sub_accordian'><a class='show_more'>{{ 'seemore'|_ }}</a><a class='show_less'>{{ 'hideless'|_ }}</a></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% set j = j + 1 %}
+                    {% set i = i + 1 %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="continues-guide"><a id="SeeMore"><img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-viewmore.png" alt="">&nbsp{{ 'seemore'|_ }}</a><a id="HideLess"><img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-viewmore.png" alt="">&nbsp{{ 'hideless'|_ }}</a></div>
+
+        </div>
+    </div>
+
+    <!-- CRM theo ngành -->
+
+    <div class="guide" id="guide2">
+        <div class="container">
+            <div class="block-title">
+                <img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-guide.png">
+                {% set postDefault = postsCategoryCrmTheoNganh.postsCategory[0][0] %}
+                <h2>&nbsp<a href="{{ 'post'| page({ category1:'guide-crm-theo-nganh'|_}) }}">{{ 'crmindustry'|_ }}</a></h2>
+            </div>
+            <div class="row">
+                {% if(categoriesByCrmTheoNganh) %}
+                    {% set i = 0 %}
+                        {% set j = 0 %} 
+                            {% set k = 0 %}
+                            {% for category in categoriesByCrmTheoNganh %}
+                                {% if(j>3) %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 MoreColumn1" >
+                                    <div class="guide-item">
+                                        <div class="guide-item-title">
+                                            {% set postDefaultForeachCategory = postsCategoryCrmTheoNganh.postsCategory[i][0] %}
+                                            <a class="{% if category.slug == currentCategorySlug %}active{% endif %}"
+                                            href="{{ 'post'| page({ category1:'guide-crm-theo-nganh'|_,category2: category.slug, slug: postDefaultForeachCategory.slug }) }}"><h3 class="fz-24">{{ category.name }}</h3> 
+                                            </a>  
+                                        </div>
+                                    <ul class="PostList">
+                                        {% set postsCategory = postsCategoryCrmTheoNganh.postsCategory[i] %}
+                                        {% for post in postsCategory %}
+                                        <li>
+                                            <a title="{{ post.title }}" href="{{ 'post'| page({ category1:'guide-crm-theo-nganh'|_,category2: category.slug, slug: post.slug}) }}">{{ post.title }}</a>
+                                        </li>
+                                        {% endfor %}
+                                        <li class='sub_accordian'><a class='show_more'>{{ 'seemore'|_ }}</a><a class='show_less'>{{ 'hideless'|_ }}</a></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3 ">
+                                    <div class="guide-item">
+                                        <div class="guide-item-title">
+                                            {% set postDefaultForeachCategory = postsCategoryCrmTheoNganh.postsCategory[i][0] %}
+                                            <a class="{% if category.slug == currentCategorySlug %}active{% endif %}"
+                                            href="{{ 'post'| page({ category1:'guide-crm-theo-nganh'|_,category2: category.slug, slug: postDefaultForeachCategory.slug }) }}"><h3 class="fz-24">{{ category.name }}</h3>
+                                            </a>
+                                        </div>
+                                    <ul class="PostList">
+                                        {% set postsCategory = postsCategoryCrmTheoNganh.postsCategory[i] %}
+                                        {% for post in postsCategory %}
+                                        <li>
+                                            <a title = "{{ post.title }}" href="{{ 'post'| page({ category1:'guide-crm-theo-nganh'|_,category2: category.slug, slug: post.slug}) }}">{{ post.title }}</a>
+                                        </li>
+                                        {% endfor %}
+                                        <li class='sub_accordian'><a class='show_more'>{{ 'seemore'|_ }}</a><a class='show_less'>{{ 'hideless'|_ }}</a></li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% set j = j + 1 %}
+                    {% set i = i + 1 %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="continues-guide"><a id="SeeMore1"><img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-viewmore.png" alt="">&nbsp{{ 'seemore'|_ }}</a><a id="HideLess1"><img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-viewmore.png" alt="">&nbsp{{ 'hideless'|_ }}</a></div>
+
+        </div>
+    </div>

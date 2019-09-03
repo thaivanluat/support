@@ -1,0 +1,49 @@
+title = "Kết quả tìm kiếm"
+url = "/search/:search?/:page?"
+layout = "noSidebar"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[searchResult]
+searchTerm = "{{ :search }}"
+pageNumber = "{{ :page }}"
+disableUrlMapping = 0
+hightlight = 1
+postsPerPage = 10
+noPostsMessage = "Not found"
+sortOrder = "published_at desc"
+excludeCategories[] = 5
+excludeCategories[] = 6
+excludeCategories[] = 16
+excludeCategories[] = 17
+excludeCategories[] = 18
+excludeCategories[] = 19
+excludeCategories[] = 21
+excludeCategories[] = 23
+excludeCategories[] = 25
+excludeCategories[] = 26
+excludeCategories[] = 28
+excludeCategories[] = 29
+excludeCategories[] = 50
+excludeCategories[] = 51
+excludeCategories[] = 52
+excludeCategories[] = 53
+excludeCategories[] = 54
+excludeCategories[] = 55
+excludeCategories[] = 56
+excludeCategories[] = 57
+excludeCategories[] = 58
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/searchResult.css');
+}
+?>
+==
+<div class="container">
+<br>
+{% component 'searchResult' %}
+{% partial 'blog/pagination' %}
+</div>

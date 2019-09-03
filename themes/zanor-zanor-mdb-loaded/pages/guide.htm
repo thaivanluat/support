@@ -1,0 +1,55 @@
+title = "Tài liệu hướng dẫn"
+url = "/guide/:category/:page?"
+layout = "withSidebarPost"
+is_hidden = 0
+child_of = "mey_no_parent"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[viewBag]
+localeTitle[en] = "User Guide"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :category }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "guide"
+postPage = "post"
+==
+{% set post  = blogPosts.postNumber1 %}
+{% set posts = blogPosts.posts %}
+
+<!--row-->
+{% set post = post %}
+<div class="post">
+    <div class="col-md-12">
+        <!--Content-->
+        <div class="card-body mb-3 col-md-12">
+            <!--Title-->
+            <div class="card-title mt-2">
+                <h1>{{ post.title}}</h1>
+            </div>
+            <!--Text-->
+            <div class="card-text">
+                {{ post.content_html|raw }}
+            </div>
+        </div>
+
+        <dif class="text-muted">
+            Posted{% if post.categories.count %} in
+                {% for category in post.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            {% endif %}
+            <small class="float-right">{{ post.published_at|date('d M Y') }}</small>
+        </dif>
+
+    </div>
+</div>
+
+<!--/.row-->

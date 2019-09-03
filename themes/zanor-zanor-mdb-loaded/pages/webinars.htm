@@ -1,0 +1,24 @@
+title = "webinars"
+url = "/webinars"
+layout = "noSidebar"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "webinars"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/webinars.css');
+$this->addJs('assets/js/showVideoWebinars.js');
+}
+?>
+==
+{% partial 'blog/webinars' %}
+{% partial 'blog/pagination' %}

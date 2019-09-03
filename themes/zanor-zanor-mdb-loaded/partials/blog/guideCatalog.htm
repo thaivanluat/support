@@ -1,0 +1,9 @@
+description = "Danh mục tài liệu"
+
+[viewBag]
+==
+{% for post in posts %}
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 guide-catalog-item">
+  <a  href="{{ post.url }}" ><h4 class="post-title"> <strong>{{ post.title }}</strong></h4></a>
+</div>
+{% endfor %}

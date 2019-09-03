@@ -1,0 +1,62 @@
+title = "Trang chủ"
+url = "/"
+layout = "noSidebar"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[viewBag]
+localeTitle[en] = "Homepage"
+
+[blogPosts postsCauHoiThuongGap]
+pageNumber = "{{ :page }}"
+locationFilter = "hien-thi-o-cau-hoi-thuong-gap"
+postsPerPage = 8
+noPostsMessage = "No posts found"
+sortOrder = "published_at asc"
+
+[postsCategory postsCategoryCrmTieuChuan]
+postsPerColumn = 50
+sortOrder = "ordinal asc"
+parent = "guide-crm-tieu-chuan"
+categoryPage = "post"
+postPage = "post"
+
+[postsCategory postsCategoryCrmTheoNganh]
+postsPerColumn = 50
+sortOrder = "ordinal asc"
+parent = "guide-crm-theo-nganh"
+categoryPage = "post"
+postPage = "post"
+
+[blogPosts postsVideo]
+pageNumber = "{{ :page }}"
+locationFilter = "hien-thi-o-video-huong-dan-trang-chu"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at asc"
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/homePage.css');
+$this->addCss('assets/css/dropdownFaqsHome.css');
+$this->addCss('assets/css/videoGuideHome.css');
+$this->addCss('assets/css/GuideColumn.css');
+$this->addJs('assets/js/dropdownFaqsHome.js');
+$this->addJs('assets/js/videoGuideHome.js');
+$this->addJs('assets/js/videoModalHome.js');
+$this->addJs('assets/js/GuideColumn.js');
+}
+?>
+==
+<main>
+    <!--Main layout--> 
+    <!-- Câu hỏi thường gặp -->     
+    {% partial 'homePage/cauHoiThuongGap' %}
+    <!-- Hướng dẫn sử dụng -->
+    {% partial 'homePage/taiLieuHuongDan' %}
+    <!-- Video hướng dẫn -->
+    {% partial 'homePage/videoHuongDan' %}
+    <!--/.Main layout-->
+</main>

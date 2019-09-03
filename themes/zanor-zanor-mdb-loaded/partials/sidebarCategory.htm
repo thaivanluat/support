@@ -1,0 +1,48 @@
+description = "side bar cho trang cau hoi thuong gap, trang video"
+
+[viewBag]
+==
+{% set currentCategorySlug1 = CategoryThreeLevel.currentCategorySlug1 %}
+{% set currentCategorySlug2 = CategoryThreeLevel.currentCategorySlug2 %}
+{% set categoriesLevel1 = CategoryThreeLevel.categoriesParent %}
+{% set categoriesLevel2 = CategoryThreeLevel.categoriesChild %}
+{% set categoryMaster = CategoryThreeLevel.categoryMaster %}
+
+<div class="detail-category">
+    <h2>
+        <span class="fa fa-bars btn-category-mobile d-inline-block d-md-none"></span>
+            {{ categoryMaster.name }}
+    </h2>
+    <ul class="lv1">
+        {% for categoryLevel1 in categoriesLevel1 %}
+
+        <li class=" {% if(categoryLevel1.slug == currentCategorySlug1) %} active-text {%endif%}">
+            {% set category2SLugDefault = categoryLevel1.slug2 %}
+            <a href="{{ currentCategorySlug|page({category1: categoryLevel1.slug, category2: category2SLugDefault }) }}"
+                title="{{ categoryLevel1.name }}">{{ categoryLevel1.name }}</a>
+
+            {% if( categoryLevel1.slug == currentCategorySlug1 ) %}
+            <ul class="lv2">
+
+                {% for categoryLevel2 in categoriesLevel2 %}
+
+                    {% if currentCategorySlug2 == '' %}
+                        {% set currentCategorySlug2 = category2SLugDefault %}
+                    {% elseif currentCategorySlug2 == 'default' %}
+                        {% set currentCategorySlug2 = category2SLugDefault %}
+                    {% endif %}
+
+                    <li class=" {% if categoryLevel2.slug == currentCategorySlug2 %} active
+                                {% endif %} ">
+
+                        <a href="{{ currentCategorySlug|page({category1: categoryLevel1.slug, category2: categoryLevel2.slug}) }}"  title="{{ categoryLevel2.name }}">
+                            {{ categoryLevel2.name }}</a>
+
+                    </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

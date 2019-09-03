@@ -1,0 +1,367 @@
+.create-ticket label {
+	line-height: 21px;
+    font-size: 14px;
+}
+
+
+.create-ticket {
+    margin-top: 50px;
+}
+
+.create-ticket .has-error,.help-block {
+    color: #a94442;
+}
+
+.create-ticket input{
+    width: 100%
+    margin: 0;
+    font-weight: 400;
+    color: inherit;
+    border-radius: 75px;
+    border: 1px solid #e0e0e0;
+    height: 44px;
+    padding: 0 18px;
+    font-size: 14px;
+    background: #f8f8f8;
+    outline: none;
+    border-bottom: none;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+.create-ticket select{
+    outline: none;
+    box-sizing: border-box;
+}
+
+.create-ticket .box-small-ht {
+    text-align: left !important;
+}
+
+.create-ticket .box-small-ht .textbox-input-1 {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 44px;
+    margin-bottom: 0;
+}
+
+form .has-error .field-validation-error {
+    font-size: 13px;
+    text-align: left;
+}
+
+.create-ticket .box-group.box-group-home {
+    border: none;
+    padding-top: 0;
+}
+
+.create-ticket .box-group {
+    margin-bottom: 30px;
+}
+
+.create-ticket .product-name-home {
+    margin-top: 9px !important;
+    margin-bottom: 13px !important;
+    color: #42464e;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.create-ticket .box-group.box-group-home .box-small1 label, .create-ticket .box-group.box-group-home .box-small-ht label {
+    display: none;
+}
+
+.create-ticket .box-help select, .hotro-pagebody .box-small1 input.input-text, .create-ticket .box-small-ht input.input-text {
+    width: 100%;
+    outline: none;
+}
+
+.create-ticket input.input-text {
+    width: 100%;
+    margin: 0;
+    font-weight: 400;
+    color: inherit;
+    border-radius: 75px;
+    border: 1px solid #e0e0e0;
+    height: 44px;
+    padding: 0 18px;
+    font-size: 14px;
+    background: #f8f8f8;
+}
+
+.create-ticket .box-group .has-error {
+    padding-left: 15px;
+    margin-top: 6px;
+    text-align: left;
+    color: #a94442;
+}
+
+form .help-block {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.create-ticket .input-select input {
+    width: calc(100% - 200px) !important;
+    margin-right: 6px;
+}
+
+.create-ticket select{
+    margin: 0;
+    font-weight: 400;
+    color: inherit;
+    border-radius: 75px;
+    border: 1px solid #e0e0e0;
+    height: 44px;
+    padding: 0 18px;
+    font-size: 14px;
+    background: #f8f8f8;
+    -webkit-appearance: none;
+    background: url(../images/icon_dropdown.png) no-repeat #f8f8f8 scroll right 15px center;
+    cursor: pointer;
+}
+
+.create-ticket textarea {
+    border: 1px solid #ccc;
+    height: 6rem;
+    padding: 0 18px;
+}
+
+.create-ticket .box-small-ht .textbox-input-1 {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 44px;
+    margin-bottom: 0;
+}
+
+
+.create-ticket .box-small-ht .input-text-title {
+    width: 10%;
+    border-radius: 0;
+    border-width: 0 0 0 1px;
+    float: left;
+    line-height: 42px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.create-ticket .box-small-ht .input-text-require-title {
+    float: right;
+    width: 90%;
+    border-width: 0 0 0 1px;
+    border-radius: 0;
+    background: #fff;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.create-ticket .error {
+    color: #ff0000;
+    display: none;
+}
+
+.create-ticket .filedrop .dropzone {
+    border-top: none !important;
+    border-color: #ccc !important;
+    background-color: #fff !important;
+    border-radius: 0 !important;
+    border: 1px solid;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #999;
+}
+
+.create-ticket .filedrop .dropzone label.manual {
+    background: rgba(0, 0, 0, 0) url(../images/icon_file_att.png) no-repeat scroll 0 0;
+    color: #7d7d7d;
+    font-weight: 300;
+    padding: 1px 0 0 27px;
+    margin-left: 20px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.create-ticket .padding-md-left {
+    padding-left: 16px !important;
+}
+
+.create-ticket button.button {
+    font-weight: 300;
+    width: 254px;
+    border: none;
+    color: #fff;
+    padding: 0 30px;
+    line-height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+    backface-visibility: hidden;
+    border-radius: 25px;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 50px;
+    padding: 0 20px;
+    transform: translateZ(0px);
+    transition: color 0.5s ease 0s;
+    white-space: nowrap;
+    height: 50px;
+    cursor: pointer;
+}
+
+.create-ticket .btn-registration {
+    color: #fff;
+    background: #2ad38b;
+    background: linear-gradient(to right,#2ad38b,#0cceb0);
+    border-radius: 45px;
+    display: inline-block;
+    line-height: 63px;
+    padding: 0 35px;
+    outline: none;
+    -webkit-user-select: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    white-space: nowrap;
+    font-size: 16px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.create-ticket .service-type {
+    width: 188px;
+}
+
+
+.sendRequest-item {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    background-color: #4089ff;
+    height: 150px;
+    padding-top: 20px;
+}
+.sendRequest-item a {
+    text-decoration: none;
+}
+
+.sendRequest-item .icon {
+    height: 56px;
+    line-height: 56px;
+}
+.sendRequest-item h3 {
+    font-size: 16px;
+    color: #fff;
+    margin: 15px 0 18px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.create-ticket .contact  fieldset{
+    position: relative;
+    border: 3px solid #f7ca25;
+    text-align: left;
+    border-radius: 0px 20px 0px;
+    padding: 15px;
+
+}
+
+.create-ticket .contact  legend{
+    display: block;
+    width: 55%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: inherit;
+    color: inherit;
+    white-space: normal;
+    color: #e0b414;
+}
+
+.create-ticket .contact fieldset strong{
+    float: left;
+    font-size: 14px;
+    color: red;
+}
+
+.create-ticket .contact fieldset p{
+    font-size: 12px;
+    float: right;
+    margin: 0px;
+}
+
+.create-ticket .contact fieldset span{
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+    margin: 0px;
+}
+
+@media (max-width: 575px){
+    .create-ticket .input-select input {
+        width: 100% !important;
+        margin-right: 0;
+        margin-bottom: 1rem !important;
+    }
+    .create-ticket .input-select select {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .create-ticket .box-small-ht .input-text-require-title {
+        float: right;
+        width: 80%;
+        border-width: 0 0 0 1px;
+        border-radius: 0;
+    }
+
+    .create-ticket .box-small-ht .input-text-title {
+        width: 20%;
+        border-radius: 0;
+        border-width: 0 0 0 1px;
+        float: left;
+        line-height: 42px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 437px) {
+    .create-ticket .box-small-ht .input-text-title {
+        width: 30%;
+        border-radius: 0;
+        border-width: 0 0 0 1px;
+        float: left;
+        line-height: 42px;
+        text-align: center;
+    }
+
+    .create-ticket .box-small-ht .input-text-require-title {
+        float: right;
+        width: 70%;
+        border-width: 0 0 0 1px;
+        border-radius: 0;
+    }
+}
+
+#oldCustomer input[type=radio]{
+   height: auto;
+}
+
+#oldCustomer p{
+    font-size: 14px;
+}
+
+#CustomerError {
+    display: none;
+}
+
+
+

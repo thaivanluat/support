@@ -1,0 +1,10 @@
+.guide-catalog-item {
+    padding: 18px 0 13px;
+    text-align: left;
+    order: 2;
+    width: 100%;
+  }
+
+  .guide-catalog-item a {
+      color: #000;
+  }

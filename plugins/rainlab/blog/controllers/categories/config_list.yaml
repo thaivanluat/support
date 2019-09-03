@@ -1,0 +1,12 @@
+title: 'rainlab.blog::lang.categories.list_title'
+modelClass: RainLab\Blog\Models\Category
+list: ~/plugins/rainlab/blog/models/category/columns.yaml
+recordUrl: 'rainlab/blog/categories/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 5
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+showTree: true

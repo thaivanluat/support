@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-light nav-white">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="{{ 'homepage'|page }}" ><img src="themes/zanor-zanor-mdb-loaded/assets/images/onlinecrm-logo.png" width="165px" height="40px" alt=""></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-nav-auto">
+            {% for primaryNav in parentNode.getChildren %}
+                {% if primaryNav.enabled %}
+                    {% if primaryNav.getChildCount and numberOfLevels > 1 %}
+                        <li class="menuDropdown nav-item dropdown {{ listItemClasses }} {{ primaryNav.getListItemClasses(activeLeft, activeRight) }}">
+                            <a href="{{ primaryNav.getLinkHref }}" target="{{ primaryNav.getLinkTarget }}" class="menuDropdown nav-link 'dropdown-toggle' " data-toggle="dropdown">
+                                {{ primaryNav.title }}&nbsp<i class="fa fa-angle-down"></i>
+                            </a>
+                    {% else %}
+                        <li class="nav-item  {{ listItemClasses }} {{ primaryNav.getListItemClasses(activeLeft, activeRight) }}">
+                            <a class="nav-link  waves-effect waves-light" href="{{ primaryNav.getLinkHref }}" target="{{ primaryNav.getLinkTarget }}">
+                                {{ primaryNav.title }}
+                            </a>
+                    {% endif %}
+                    {% if primaryNav.getChildCount and numberOfLevels > 1 %}
+                        <ul class="menuItemDropdown {{ secondaryClasses }}">
+                            <div class="row">
+                                {% for secondaryNav in primaryNav.getChildren %}
+                                    {% if secondaryNav.enabled %}
+                                        <div class=" bor-left col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                            <li class="{{ listItemClasses }} {{ secondaryNav.getListItemClasses(activeLeft, activeRight) }}">
+                                                <div>
+                                                    <a class="dropdown-item" href="{{ secondaryNav.getLinkHref }}" target="{{ secondaryNav.getLinkTarget }}" title="{{ secondaryNav.title }}">
+                                                        {{ secondaryNav.title }}
+                                                    </a>
+                                                </div>
+                                                <div class="menu-description" title="{{ secondaryNav.description }}">
+                                                    <p><i>{{ secondaryNav.description }}</i></p>
+                                                </div>
+
+                                                <div><p>{{ tertiaryNav.description }}</p></div>
+                                                {% if secondaryNav.getChildCount and numberOfLevels > 2 %}
+                                                    <ul class="{{ tertiaryClasses }}">
+                                                        {% for tertiaryNav in secondaryNav.getChildren %}
+                                                            {% if tertiaryNav.enabled %}
+                                                                <li class="{{ listItemClasses }} {{ tertiaryNav.getListItemClasses(activeLeft, activeRight) }}">
+                                                                    <a href="{{ tertiaryNav.getLinkHref }}" target="{{ tertiaryNav.getLinkTarget }}">
+                                                                        {{ tertiaryNav.title }}
+                                                                    </a>
+                                                                </li>
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% endif %}
+                                            </li>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </ul>
+                    {% endif %}
+                        </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- Collapsible content -->
+    <!-- Right Nav -->
+    <div class="right-nav">
+        <!-- Ticket -->
+        <a href="{{ 'createticket'|page }}" id="ticket"> {{'sendticket'|_}} </a>
+
+        <!-- Translate -->
+        <div class="navbar-lang">
+            <a href="{{ url('/en') }}"><img src="themes/zanor-zanor-mdb-loaded/assets/images/lang-en.png"></a>
+            <a href="{{ url('/vn') }}"><img src="themes/zanor-zanor-mdb-loaded/assets/images/lang-vi.png"></a>
+        </div>
+    </div>
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+<!--Navbar-->

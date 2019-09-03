@@ -1,0 +1,21 @@
+1.0.0:
+    - First version of BlogViews
+    - create_post_views_table.php
+1.0.1:
+    - Limit and link params fixed
+1.0.2:
+    - Added 'views' dynamic property to Post model
+1.0.3:
+    - Improve the translation. Add MIT license. Pull request by gergo85
+1.0.4:
+    - Default value to 0 in getViewsAttribute (thanks to hambern)
+1.0.5:
+    - Add support for whatever slug url name parameter like {{ :slug_some_custom_url_parameter }}
+1.0.6:
+    - Ability to choose blog category for Popular posts
+1.0.7:
+    - Dynamic category slug url parameter. Only published posts in Popular component
+1.0.8:
+    - "Fixed error using blogviews with sitemap: check if Controller instantiated before extend"
+1.0.9:
+    - "Get url parameters directly from Controller instance without component. Using Cookie instead of Session"

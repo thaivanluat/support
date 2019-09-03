@@ -1,0 +1,39 @@
+<div class="report-widget">
+    <h3><?= Lang::get('datwork.webhooks::lang.widget.title') ?></h3>
+    <form class="form-elements" role="form">
+        <div class="form-group">
+            <label><?= Lang::get('datwork.webhooks::lang.widget.command') ?></label>
+            <input type="text" name="command" value=""
+                   placeholder="<?= Lang::get('datwork.webhooks::lang.widget.command_placeholder') ?>"
+                   class="form-control"/>
+
+            <a class="btn btn-warning" style="margin-top:1rem" data-request="<?= $this->getEventHandler('onCommand')?>"
+               data-request-confirm="<?= Lang::get('datwork.webhooks::lang.widget.exec_confirm')?> "> <?= Lang::get('datwork.webhooks::lang.widget.exec') ?></a>
+
+        </div>
+    </form>
+    <form class="form-elements" role="form">
+        <div class="form-group">
+            <label><?= Lang::get('datwork.webhooks::lang.widget.hash') ?></label>
+            <input type="text" name="hash" value=""
+                   placeholder="<?= Lang::get('datwork.webhooks::lang.widget.hash_placeholder') ?>"
+                   class="form-control"/>
+
+            <a class="btn btn-warning" style="margin-top:1rem" data-request="<?= $this->getEventHandler('onReset')?>"
+               data-request-confirm="<?= Lang::get('datwork.webhooks::lang.widget.reset_confirm')?> "> <?= Lang::get('datwork.webhooks::lang.widget.reset') ?></a>
+
+            <a style="margin-top:1rem" class="btn  btn-danger" role="button" href="javascript:;"
+               data-request-confirm="<?= Lang::get('datwork.webhooks::lang.widget.pull_confirm') ?>"
+               data-request="<?= $this->getEventHandler('onPull')?>"
+               title="Next page"><?= Lang::get('datwork.webhooks::lang.widget.pull') ?></a>
+        </div>
+    </form>
+    <div>
+    </div>
+
+    <div class="control-status-list m-t-md">
+        <ul id="myDiv">
+
+        </ul>
+    </div>
+</div>

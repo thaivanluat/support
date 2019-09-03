@@ -1,0 +1,66 @@
+==
+{% set videos = postsVideo.posts %}
+
+<!-- The modal to display video -->
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The iframe video) -->
+            <div class="modal-contain" id="modalContain">
+
+            </div>
+            <!-- Modal Caption (The video title) -->
+            <a id="caption"></a>
+        </div>
+
+        <!-- Video huong dan -->
+
+        <div class="guide-video" style="display: block">
+            <div class="container" >
+                <div class="block-title">
+                <img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-video-guide.png">
+                <h2>&nbsp<a href=" {{ 'video'| page({category1: 'guide-crm-tieu-chuan'|_}) }} ">{{ 'video'|_ }}</a></h2>
+                </div>
+                <!-- The video -->
+
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"  >
+                        <div class="image-video">
+                            <div class="video-link">
+                                <img src= "storage/app/media{{ videos[0].image }}" width="100%" height="312px" alt="Avatar" class="image">
+                                <span class="video-play"><i class="fa fa-play" ></i></span>
+                                <div style="display: none" class="video-iframe" >{{ videos[0].iframe|raw }}</div>
+
+                                <a style="display: none" class="video-url" href="{{ videos[0].url }}">{{ videos[0].title }}</a>
+                            </div>
+                            <span class="video-title"><a class="video-url" href="{{ videos[0].url }}">{{ videos[0].title }}</a></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="row">
+                        {% for video in videos %}
+                           {% if video != videos[0] %}
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <div class="image-video-small">
+                                        <div class="video-link">
+                                            <img src= "storage/app/media{{ video.image }}" width="100%" height="150px" class="img-responsive" alt="Image">
+                                            <span class="video-play-small"><i class="fa fa-play"></i></span>
+                                            <div class="video-iframe" style="display: none">{{ video.iframe|raw }}</div>
+                                            <a style="display: none" class="video-url" href="{{ video.url }}">{{ video.title }}</a>
+                                        </div>
+                                        <span class="video-title-small"><a href="{{ video.url }}">{{ video.title }}</a></s>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+                <br>
+                <div class="continues-video"><a href="{{ 'video'| page({ category1:'guide-crm-tieu-chuan'|_ }) }}"><img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-viewmore.png" alt="">&nbsp{{ 'seemore'|_ }}</a></div>
+
+            </div>
+        </div>

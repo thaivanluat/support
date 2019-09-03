@@ -1,0 +1,46 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    user:
+        label: User
+        type: recordfinder
+        context: create
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        prompt: Click the %s button to find a user
+        nameFrom: name
+        descriptionFrom: email
+
+    business_name:
+        label: Business Name
+
+    tagline:
+        label: Tag line
+
+    contact_email:
+        label: Contact email
+        span: auto
+
+    contact_phone:
+        label: Contact phone
+        span: auto
+
+    website_url:
+        label: Website URL
+
+    description:
+        label: Profile description
+        type: textarea
+
+    category:
+        label: Category
+        type: relation
+        span: auto
+        placeholder: -- select --
+
+    budget:
+        label: Budget
+        type: relation
+        span: auto
+        placeholder: -- select --

@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+items:
+    label: Item
+    list: ~/plugins/responsiv/pyrolancer/models/portfolioitem/columns.yaml
+    form: ~/plugins/responsiv/pyrolancer/models/portfolioitem/fields.yaml
+    view:
+        toolbarButtons: create|delete
+    manage:
+        showSearch: true
+        recordsPerPage: 10

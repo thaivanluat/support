@@ -1,0 +1,142 @@
+.build-interface {
+    padding: 66px 0 55px;
+}
+
+.page-developer .build-interface .item {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-developer .build-interface .item p {
+    display: -webkit-box;
+    height: 60px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    padding: 10px 0;
+    overflow: hidden;
+}
+.page-developer h2 {
+    font-size: 42px;
+    font-weight: 300;
+    color: #42464e;
+    margin: 0;
+    line-height: 1.4;
+    padding-bottom: 32px;
+    text-align: center;
+}
+
+.page-developer .btn-viewdetail {
+    margin-top: 10px;
+    height: 50px;
+    display: inline-block;
+    line-height: 50px;
+    padding: 0 40px;
+    font-size: 16px;
+    color: #fff;
+    background-image: -moz-linear-gradient(33deg, #2ad38b 0%, #0cceb0 100%);
+    background-image: -webkit-linear-gradient(33deg, #2ad38b 0%, #0cceb0 100%);
+    background-image: -ms-linear-gradient(33deg, #2ad38b 0%, #0cceb0 100%);
+    box-shadow: 0px 1px 31.85px 3.15px rgba(0,0,0,0.13);
+    border-radius: 25px;
+    vertical-align: top;
+    text-decoration: none;
+    -webkit-user-select: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    white-space: nowrap;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    border: none;
+    outline: none;
+}
+
+.page-developer .build-app {
+    padding: 66px 0 55px;
+    background: #f3fbfe;
+}
+
+.page-developer .build-app .block-img {
+    padding-top: 12px;
+    text-align: center;
+}
+
+.page-developer .build-app .block-description {
+    margin-bottom: 25px;
+}
+
+.page-developer .build-app h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #42464e;
+    position: relative;
+    padding-bottom: 16px;
+    margin-bottom: 28px;
+}
+
+.page-developer .build-app ul {
+    padding-right: 20px;
+}
+
+.page-developer .build-app ul li {
+    font-size: 16px;
+    color: #42464e;
+    line-height: 24px;
+    position: relative;
+    padding-left: 33px;
+    margin-bottom: 18px;
+    list-style: none;
+}
+
+.page-developer .build-app ul li span {
+    color: #0088ff;
+    font-size: 26px;
+    position: absolute;
+    left: 0;
+    top: 1px;
+}
+
+.page-developer .build-app h3:after {
+    content: "";
+    height: 2px;
+    width: 76px;
+    background: #0088ff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.page-developer .help {
+    background: url(//bizweb.dktcdn.net/100/319/535/themes/704672/assets/bg-sendrequest.png?1561087922607) no-repeat center center;
+    text-align: center;
+}
+
+.page-developer .help h2 {
+    color: #fff;
+    padding: 66px 0 27px;
+}
+
+.page-developer .help h3 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 11px;
+}
+
+.page-developer .help p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding-bottom: 16px;
+}
+
+.page-developer .help img {
+    margin-top: 14px;
+}
+
+.page-developer .help span {
+    margin-right: 14px;
+}

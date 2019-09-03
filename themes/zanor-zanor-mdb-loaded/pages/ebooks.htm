@@ -1,0 +1,24 @@
+title = "Ebooks"
+url = "/ebooks"
+layout = "noSidebar"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+locationFilter = "hien-thi-o-trang-ebooks"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "ordinal asc"
+categoryPage = "createticket"
+postPage = "post"
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/ebookPage.css');
+}
+?>
+==
+{% partial 'blog/ebooks' %}

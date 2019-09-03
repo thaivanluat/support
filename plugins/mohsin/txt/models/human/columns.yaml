@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    attribution:
+        label: Attribution
+        searchable: true
+
+    information:
+        label: Information

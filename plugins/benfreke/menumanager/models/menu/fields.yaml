@@ -1,0 +1,62 @@
+fields:
+    title:
+        label: 'benfreke.menumanager::lang.modeldataform.title'
+        span: left
+        type: text
+    description:
+        label: 'benfreke.menumanager::lang.modeldataform.description'
+        span: right
+        type: text
+    enabled:
+        label: 'benfreke.menumanager::lang.modeldataform.enabled'
+        type: radio
+        options:
+            - 'benfreke.menumanager::lang.modeldataform.optdisabled'
+            - 'benfreke.menumanager::lang.modeldataform.optenabled'
+        default: 1
+        span: left
+    is_external:
+        label: 'benfreke.menumanager::lang.modeldataform.external'
+        type: dropdown
+        placeholder: 'benfreke.menumanager::lang.modeldataform.selectmenutype'
+        options:
+            - 'benfreke.menumanager::lang.modeldataform.optinternal'
+            - 'benfreke.menumanager::lang.modeldataform.optexternal'
+        default: 0
+        cssClass: menumanager-type-controller
+        span: left
+    internal_url:
+        label: 'benfreke.menumanager::lang.modeldataform.internalurl'
+        type: dropdown
+        placeholder: 'benfreke.menumanager::lang.modeldataform.internalurlplaceholder'
+        options: getUrlOptions
+        cssClass: 'menumanager-type type-0'
+        span: right
+    external_url:
+        label: Url
+        placeholder: 'benfreke.menumanager::lang.modeldataform.externalurl'
+        cssClass: 'menumanager-type type-1'
+        comment: 'benfreke.menumanager::lang.modeldataform.externalurlcomment'
+        span: right
+        type: text
+    link_target:
+        label: 'benfreke.menumanager::lang.modeldataform.linktarget'
+        type: radio
+        options:
+            _self: 'benfreke.menumanager::lang.modeldataform.self'
+            _blank: 'benfreke.menumanager::lang.modeldataform.blank'
+        default: _self
+    parameters:
+        label: 'benfreke.menumanager::lang.modeldataform.parameters'
+        span: full
+        type: text
+        commentAbove: 'benfreke.menumanager::lang.modeldataform.parameterscomment'
+    query_string:
+        label: 'benfreke.menumanager::lang.modeldataform.querystr'
+        commentAbove: 'benfreke.menumanager::lang.modeldataform.querystrcomment'
+        type: text
+        size: tiny
+    url:
+        label: 'benfreke.menumanager::lang.modeldataform.url'
+        cssClass: hidden
+        type: text

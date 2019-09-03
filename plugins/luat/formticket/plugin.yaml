@@ -1,0 +1,6 @@
+plugin:
+    name: 'luat.formticket::lang.plugin.name'
+    description: 'luat.formticket::lang.plugin.description'
+    author: luat
+    icon: oc-icon-ticket
+    homepage: ''

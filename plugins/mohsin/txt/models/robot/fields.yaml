@@ -1,0 +1,18 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    agent:
+        label: User-Agent
+        type: dropdown
+
+    directives:
+        label: Directives
+        type: owl-hasmany
+        sortColumn: position
+        default:
+            label: "<b>{{ type }}</b>"
+            comment: >
+                &nbsp;{{ data }}
+            icon: icon-android

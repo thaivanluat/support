@@ -1,0 +1,105 @@
+name: MainMenu
+items:
+    -
+        title: 'TÀI LIỆU HƯỚNG DẪN'
+        nesting: ''
+        type: all-static-pages
+        url: ''
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Hướng dẫn chung'
+                nesting: '0'
+                type: blog-category
+                url: ''
+                code: ''
+                reference: '3'
+                cmsPage: guide
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Hướng dẫn nghiệp vụ CSKH'
+                nesting: '0'
+                type: blog-category
+                code: ''
+                reference: '1'
+                cmsPage: guide
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Hướng dẫn báo cáo'
+                nesting: '0'
+                type: blog-category
+                url: ''
+                code: ''
+                reference: '9'
+                cmsPage: guide
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Hướng dẫn nghiệp vụ tiếp thị'
+                nesting: '0'
+                type: blog-category
+                url: ''
+                code: ''
+                reference: '8'
+                cmsPage: guide
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: video
+        nesting: '0'
+        type: blog-category
+        url: ''
+        code: ''
+        reference: '3'
+        cmsPage: video
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'CÂU HỎI THƯỜNG GẶP'
+        nesting: '0'
+        type: blog-category
+        url: ''
+        code: ''
+        reference: '4'
+        cmsPage: faqs
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: EBOOKS
+        nesting: '0'
+        type: blog-category
+        code: ''
+        reference: '3'
+        cmsPage: guideCatalog
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

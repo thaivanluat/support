@@ -1,0 +1,41 @@
+columns:
+    name:
+        label: 'rainlab.blog::lang.category.name'
+        type: text
+        searchable: true
+    post_count:
+        label: 'rainlab.blog::lang.category.posts'
+        type: text
+    id:
+        label: id
+        type: number
+    slug:
+        label: slug
+        type: text
+    code:
+        label: code
+        type: text
+    description:
+        label: description
+        type: text
+    parent_id:
+        label: parent_id
+        type: number
+    nest_left:
+        label: nest_left
+        type: number
+    nest_right:
+        label: nest_right
+        type: number
+    nest_depth:
+        label: nest_depth
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    ordinal:
+        label: ordinal
+        type: number

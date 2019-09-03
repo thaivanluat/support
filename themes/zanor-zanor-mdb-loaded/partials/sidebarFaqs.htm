@@ -1,0 +1,73 @@
+description = "sidebar cho trang cau hoi thuong gap"
+
+[viewBag]
+==
+{% set currentCategorySlug1 = CategoryThreeLevel.currentCategorySlug1 %}
+{% set currentCategorySlug2 = CategoryThreeLevel.currentCategorySlug2 %}
+{% set categoriesLevel1 = CategoryThreeLevel.categoriesParent %}
+{% set categoriesLevel2 = CategoryThreeLevel.categoriesChild %}
+{% set categoryMaster = CategoryThreeLevel.categoryMaster %}
+{% set currentPostSlug = CategoryThreeLevel.currentPostSlug %}
+
+{% if(currentPostSlug == 'default')%}
+{% set postDefault = CategoryThreeLevel.postDefault %}
+{% endif %}
+
+<div class="detail-category">
+    <h2>
+        <span class="fa fa-bars btn-category-mobile d-inline-block d-md-none"></span>
+            {{ categoryMaster.name }}
+    </h2>
+    <ul class="lv1">
+        {% for categoryLevel1 in categoriesLevel1 %}
+
+        <li class=" {% if(categoryLevel1.slug == currentCategorySlug1) %} active-text {%endif%}">
+
+            <a href="{{ currentCategorySlug|page({category1: categoryLevel1.slug, category2: categoryLevel1.slug2, slug: categoryLevel1.slugPostDefault}) }}"
+                title="{{ categoryLevel1.name }}">{{ categoryLevel1.name }}</a>
+
+            {% if( categoryLevel1.slug == currentCategorySlug1 ) %}
+            {% if(categoriesLevel2.count() > 0) %}
+            <ul class="lv2">
+                {% for categoryLevel2 in categoriesLevel2 %}
+                <li class="{% if
+                        categoryLevel2.slug == currentCategorySlug2 %}active-text {%
+                                endif %}">
+                    <a  class="lv2-category" href="{{ currentCategorySlug|page({category1: categoryLevel1.slug, category2: categoryLevel2.slug, slug: categoryLevel2.slugPostDefault}) }}" class="{% if
+                        categoryLevel2.slug == currentCategorySlug2 %}active {%
+                                endif %}" title="{{ categoryLevel2.name }}">
+                        {{ categoryLevel2.name }}
+                    </a>
+                    {% if( categoryLevel2.slug == currentCategorySlug2 ) %}
+                        <ul class="lv3">
+                            {% for post in posts %}
+                            <li class="{% if post.slug == currentPostSlug %}active {% endif %}">
+                                <a href="{{ 'faqsPost'|page({category1: categoryLevel1.slug, category2: categoryLevel2.slug, slug: post.slug}) }}" class="{% if
+                                    post.slug == currentPostSlug %}active {%
+                                            endif %}" title="{{ post.title }}">
+                                    {{ post.title }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <ul class="lv2">
+                {% for post in posts %}
+                <li class="{% if post.slug == currentPostSlug %}active {% endif %}">
+                    <a href="{{ 'faqsPost'|page({category1: categoryLevel1.slug, slug: post.slug}) }}" class="{% if
+                        post.slug == currentPostSlug %}active {%
+                                endif %}" title="{{ post.title }}">
+                        {{ post.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

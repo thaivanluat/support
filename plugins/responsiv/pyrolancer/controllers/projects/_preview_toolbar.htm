@@ -1,0 +1,34 @@
+<a
+    href="<?= Backend::url('responsiv/pyrolancer/projects/update/'.$formModel->id) ?>"
+    class="btn btn-primary oc-icon-pencil">
+    Update details
+</a>
+
+<?php if ($formModel->status->code == 'pending'): ?>
+    <div class="btn-group">
+        <a
+            href="javascript:;"
+            data-request="onApprove"
+            data-request-confirm="Approve this project?"
+            class="btn btn-success oc-icon-check-circle"
+            data-stripe-load-indicator>
+            Approve
+        </a>
+        <a
+            href="javascript:;"
+            data-control="popup"
+            data-size="large"
+            data-handler="onLoadRejectForm"
+            class="btn btn-danger oc-icon-ban">
+            Reject
+        </a>
+        <a
+            href="javascript:;"
+            data-request="onFlagSpam"
+            data-request-confirm="Flag this project as spam? It will ban the user and delete the project."
+            class="btn btn-warning oc-icon-exclamation-triangle">
+            Spam
+        </a>
+    </div>
+
+<?php endif ?>

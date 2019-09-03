@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    type:
+        label: Type
+        relation: type
+        select: name
+
+    title:
+        label: Title
+
+    is_primary:
+        label: Primary item
+        type: switch

@@ -1,0 +1,10 @@
+plugin:
+    name: 'datwork.webhooks::lang.plugin.name'
+    description: 'datwork.webhooks::lang.plugin.description'
+    author: johnny
+    icon: oc-icon-circle-o
+    homepage: ''
+permissions:
+    datwork.webhooks.access_settings:
+        tab: 'datwork.webhooks::lang.setting.title'
+        label: 'datwork.webhooks::lang.setting.title'

@@ -1,0 +1,40 @@
+==
+{% set posts = postsCauHoiThuongGap.posts %}
+<div class="faqs">
+    <div class="container">
+        <div class="block-title">
+            <img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-question.png">
+			<h2>&nbsp<a href=" {{ 'faqs'|page({category1: 'faqs-crm-tieu-chuan'|_ }) }}">{{ 'faq'|_ }}</h2></a>
+		</div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        </div>
+        <div class="row">
+
+            <!--Main column-->
+            <!-- Câu hỏi thường gặp -->
+                {% set i = 1 %}
+                {% for post in posts %}
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                    <ul>
+                        <li class="question-item">
+                            <a class="question-title" >
+                                <span class="number-circle">{{ i }}</span>
+                                {{ post.title }}
+                                <span class="fa fa-angle-down"></span>
+                            </a>
+                            <div class="question-content">
+                                {{ post.content_html|raw }}
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                {% set i = i + 1 %}
+                {% endfor %}
+
+        </div>
+        <br>
+        <div class="continues-faqs"><a href="{{ 'faqs'|page({ category1: 'faqs-crm-tieu-chuan', category2: 'cau-hoi-thuong-gap'|_ })}}"><img src="themes/zanor-zanor-mdb-loaded/assets/images/icon-viewmore.png" alt="">&nbsp{{ 'seemore'|_ }}</a></div>
+    </div>
+</div>

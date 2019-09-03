@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    user_name:
+        label: Name
+        relation: user
+        select: name
+        searchable: true
+
+    user_email:
+        label: Email
+        relation: user
+        select: email
+        searchable: true

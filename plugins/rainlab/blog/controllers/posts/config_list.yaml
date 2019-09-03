@@ -1,0 +1,17 @@
+list: ~/plugins/rainlab/blog/models/post/columns.yaml
+modelClass: RainLab\Blog\Models\Post
+title: 'rainlab.blog::lang.posts.list_title'
+recordUrl: 'rainlab/blog/posts/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 25
+showSetup: true
+showSorting: true
+defaultSort:
+    column: published_at
+    direction: desc
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+filter: config_filter.yaml

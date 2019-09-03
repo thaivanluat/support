@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    agent:
+        label: Agent
+        searchable: true
+
+    directives:
+        label: Directives

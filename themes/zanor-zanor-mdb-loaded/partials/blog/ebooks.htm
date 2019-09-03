@@ -1,0 +1,93 @@
+[viewBag]
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/faqsPage.css');
+$this->addJs('assets/js/dropdownFaqsHome.js');
+}
+?>
+==
+{% set posts = blogPosts.posts %}
+<div class="page-developer">
+    <div class="build-interface">
+        <div class="container">
+            <h2>Giải pháp CRM tùy chỉnh theo ngành</h2>
+            <div class="row justify-content-sm-center">
+                {% for post in posts %}
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="item">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.excerpt }}</p>
+                        {% set category2Slug = post.categories[0].slug %}
+                        {% if(category2Slug == "ebooks-hien-thi-o-trang-ebooks")%}
+                        {% set category2Slug = post.categories[1].slug %}
+                        {% endif %}
+                        <a href="{{ 'post'|page({category1: 'ebooks',
+                            category2: category2Slug, slug: post.slug }) }}"
+                            class="btn-viewdetail">Xem chi tiết</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="build-app">
+        <div class="container">
+            <h2>Phát triển ứng dụng của bạn một cách dễ dàng</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="block-description">
+                        <h3>Thư viện lập trình và API mở rộng</h3>
+                        <ul>
+                            <li>
+                                <span class="fa fa-check-circle"></span>
+                                Bạn hoàn toàn có thể tích hợp vào CRM với hệ
+                                thống mã nguồn mở
+                                và API đã được CRM cung cấp sẵn
+                            </li>
+                            <li>
+                                <span class="fa fa-check-circle"></span>
+                                Kho thư viện hỗ trợ về kỹ thuật cho các đối
+                                tác phát triển ứng dụng
+                                một cách dễ dàng hơn
+                            </li>
+                        </ul>
+                        <a href="{{ posts[0].url }}" class="btn-viewdetail">Xem
+                            chi tiết</a>
+                    </div>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <div class="block-img">
+                        <img
+                            src="themes/zanor-zanor-mdb-loaded/assets/images/api.jpg"
+                            alt="Phát triển ứng dụng của bạn một cách dễ
+                            dàng">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="help">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Bạn cần thêm sự hỗ trợ?</h2>
+                    <h3>Liên hệ ngay</h3>
+                    <p class="text-uppercase">Bộ phận kĩ thuật:</p>
+                    <p>
+                        <span><strong><i class="fa fa-phone-square"></i>
+                                Hotline: 1900 29 29 90</strong><i>&nbsp(ext 2)</i> </span>
+                        <span><strong><i class="fa fa-envelope"></i> Email :
+                            </strong>support@onlinecrm.vn</span>
+                    </p>
+                </div>
+                <div class="col-md-4 d-none d-md-block">
+                    <img
+                        src="//bizweb.dktcdn.net/100/319/535/themes/704672/assets/developer-help.png?1561111676349"
+                        alt="Bạn cần thêm sự hỗ trợ?">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Portfolio
+
+# Model Form Field configuration
+form: $/responsiv/pyrolancer/models/portfolio/fields.yaml
+
+# Model Class name
+modelClass: Responsiv\Pyrolancer\Models\Portfolio
+
+# Default redirect location
+defaultRedirect: responsiv/pyrolancer/portfolios
+
+# Create page
+create:
+    title: Create Portfolio
+    redirect: responsiv/pyrolancer/portfolios/update/:id
+    redirectClose: responsiv/pyrolancer/portfolios
+
+# Update page
+update:
+    title: Edit Portfolio
+    redirect: responsiv/pyrolancer/portfolios
+    redirectClose: responsiv/pyrolancer/portfolios
+
+# Preview page
+preview:
+    title: Preview Portfolio

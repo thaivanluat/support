@@ -1,0 +1,31 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    redirectpage:
+        label: mohsin.txt::lang.settings.redirectpage.label
+        commentAbove: mohsin.txt::lang.settings.redirectpage.commentAbove
+        type: dropdown
+
+    use_robots:
+        label: mohsin.txt::lang.settings.use_robots.label
+        type: switch
+
+    use_humans:
+        label: mohsin.txt::lang.settings.use_humans.label
+        type: switch
+
+    human_fields:
+        label: mohsin.txt::lang.settings.human_fields.plural
+        type: repeater
+        commentAbove: mohsin.txt::lang.settings.human_fields.commentAbove
+        prompt: mohsin.txt::lang.settings.human_fields.prompt
+        form:
+            fields:
+                human_field:
+                    label: mohsin.txt::lang.settings.human_fields.singular
+        trigger:
+            action: show
+            field: use_humans
+            condition: checked

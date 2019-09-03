@@ -1,0 +1,12 @@
+{{ form_open() }}
+    <select name="locale" data-request="onSwitchLocale" class="form-lang">
+        {% for code, name in locales %}
+            <option value="{{ code }}" {{ code == activeLocale ? 'selected' }}>{{ name }}</option>
+        {% endfor %}
+    </select>
+{{ form_close() }}
+
+
+<a href="{{ url('/en') }}"><img src="https://onlinecrm.vn/images/lang-en.png"></a>
+<a href="{{ url('/vn') }}"><img src="https://onlinecrm.vn/images/lang-vi.png"></a>
+

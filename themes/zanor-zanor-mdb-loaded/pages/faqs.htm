@@ -1,0 +1,32 @@
+title = "Câu hỏi thường gặp"
+url = "/faqs/:category1/:category2?/:page?"
+layout = "withSidebarCategory"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[viewBag]
+localeTitle[en] = "FAQs"
+
+[CategoryThreeLevel]
+pageNumber = "{{ :page }}"
+postSlug = "default"
+categoryMaster = "Q&A"
+categoryParentFilter = "{{ :category1 }}"
+categoryFilter = "{{ :category2 }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "ordinal asc"
+categoryPage = "faqs"
+postPage = "createticket"
+==
+<?php
+function onStart()
+{
+$this->addCss('assets/css/dropdownFaqsHome.css');
+$this->addJs('assets/js/dropdownFaqs.js');
+}
+?>
+==
+{% partial 'blog/faqs' %}
+{% partial 'blog/pagination' %}

@@ -1,0 +1,44 @@
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class'=>'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this -> instance -> formRender() ?>
+        </div>
+        <div class="form-buttons">
+            <div class="help-block before-field">This plugin is based on the <a href="http://www.robotstxt.org/orig.html" target="_new">RobotsTxt</a> and <a href="http://humanstxt.org/Standard.html" target="_new">HumansTxt</a> standards.</div>
+            <div class="loading-indicator-container">
+                <button
+                    type="submit"
+                    data-request="onSave"
+                    data-request-data="redirect:0"
+                    data-hotkey="ctrl+s, cmd+s"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                    class="btn btn-primary">
+                    <?= e(trans('backend::lang.form.save')) ?>
+                </button>
+                <button
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                    class="btn btn-default">
+                    <?= e(trans('backend::lang.form.save_and_close')) ?>
+                </button>
+                <button
+                    type="button"
+                    class="btn btn-danger pull-right"
+                    data-request="onResetDefault"
+                    data-load-indicator="<?= e(trans('backend::lang.form.resetting')) ?>"
+                    data-request-confirm="<?= e(trans('backend::lang.form.action_confirm')) ?>">
+                    <?= e(trans('backend::lang.form.reset_default')) ?>
+                </button>
+            </div>
+        </div>
+    <?= Form::close() ?>
+
+<?php else: ?>
+    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+    <p><a href="<?= $parentLink ?>" class="btn btn-default"><?= e(trans('system::lang.settings.return')) ?></a></p>
+<?php endif ?>
